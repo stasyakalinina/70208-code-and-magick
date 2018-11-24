@@ -51,10 +51,11 @@ window.renderStatistics = function (ctx, players, times) {
     var startPointY = CLOUD_Y + CLOUD_HEIGHT - FONT_GAP;
 
     renderText(ctx, CLOUD_X + GAP + indentItem * i, startPointY, players[i], '#000');
+    renderText(ctx, CLOUD_X + GAP + indentItem * i, startPointY - itemHeight - indentText - GAP, Math.round(times[i]), '#000');
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'blue';
+      ctx.fillStyle = 'rgba(0, 0, 255, 1)';
     }
     ctx.fillRect(CLOUD_X + GAP + indentItem * i, startPointY - itemHeight - indentText, BAR_WIDTH, itemHeight);
   }
