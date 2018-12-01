@@ -52,11 +52,6 @@ window.renderStatistics = function (ctx, players, times) {
 
     renderText(ctx, CLOUD_X + GAP + indentItem * i, startPointY, players[i], '#000');
     renderText(ctx, CLOUD_X + GAP + indentItem * i, startPointY - itemHeight - indentText - GAP, Math.round(times[i]), '#000');
-    if (players[i] === 'Вы') {
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random().toFixed(2) + ')';
-    }
-    ctx.fillRect(CLOUD_X + GAP + indentItem * i, startPointY - itemHeight - indentText, BAR_WIDTH, itemHeight);
+    renderCloud(ctx, CLOUD_X + GAP + indentItem * i, startPointY - itemHeight - indentText, BAR_WIDTH, itemHeight, (players[i] === 'Вы') ? 'rgba(255, 0, 0, 1)' : 'rgba(0, 0, 255, ' + Math.random().toFixed(2) + ')');
   }
 };
